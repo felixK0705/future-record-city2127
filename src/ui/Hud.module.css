@@ -1,0 +1,81 @@
+.hud {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.topLeft {
+  position: absolute;
+  top: calc(14px + var(--safe-top));
+  left: calc(14px + var(--safe-left));
+}
+
+.topRight {
+  position: absolute;
+  top: calc(14px + var(--safe-top));
+  right: calc(14px + var(--safe-right));
+}
+
+.clock {
+  display: flex;
+  flex-direction: column;
+  padding: 8px 16px 9px;
+  border-radius: var(--radius-m);
+  background: var(--color-panel);
+  border: 1px solid var(--color-line);
+  backdrop-filter: blur(6px);
+  transition: background 0.6s;
+}
+
+.late {
+  background: rgba(96, 52, 36, 0.78);
+}
+
+.clockLabel {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  color: var(--color-ink-dim);
+}
+
+.clockTime {
+  font-size: 24px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.2;
+}
+
+.prompt {
+  position: absolute;
+  left: 50%;
+  bottom: calc(40px + var(--safe-bottom));
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 18px 8px 8px;
+  border-radius: 999px;
+  background: var(--color-panel-strong);
+  border: 1px solid var(--color-line);
+  font-size: 15px;
+  transform: translateX(-50%);
+  animation: fade 0.2s var(--ease-out);
+}
+
+.key {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  color: var(--color-accent-ink);
+  font-family: inherit;
+  font-weight: 700;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 6px);
+  }
+}

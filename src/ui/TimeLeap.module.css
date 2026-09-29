@@ -1,0 +1,76 @@
+.screen {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  z-index: 40;
+  background: radial-gradient(circle at center, rgba(16, 19, 28, 0.15), rgba(16, 19, 28, 0.75));
+  animation: dim 1.2s ease both;
+  overflow: hidden;
+}
+
+.streaks {
+  position: absolute;
+  inset: -50%;
+  background: repeating-conic-gradient(from 0deg, rgba(255, 255, 255, 0.07) 0deg 1.2deg, transparent 1.2deg 9deg);
+  animation: spin 6.5s cubic-bezier(0.6, 0, 0.3, 1) both;
+  mix-blend-mode: screen;
+}
+
+.center {
+  position: relative;
+  text-align: center;
+}
+
+.caption {
+  font-size: 14px;
+  letter-spacing: 0.4em;
+  color: var(--color-ink-dim);
+}
+
+.year {
+  font-family: var(--font-serif);
+  font-size: clamp(64px, 18vw, 150px);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.06em;
+  line-height: 1.1;
+  text-shadow: 0 0 40px rgba(255, 230, 180, 0.4);
+}
+
+.flash {
+  position: absolute;
+  inset: 0;
+  background: #fffaf0;
+  pointer-events: none;
+  animation: flash 1.6s ease-out both;
+}
+
+@keyframes dim {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg) scale(0.6);
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  to {
+    transform: rotate(540deg) scale(1.4);
+    opacity: 0.2;
+  }
+}
+
+@keyframes flash {
+  from {
+    opacity: 0.95;
+  }
+  to {
+    opacity: 0;
+  }
+}

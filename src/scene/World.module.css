@@ -1,0 +1,9 @@
+.world {
+  position: absolute;
+  inset: 0;
+  cursor: grab;
+}
+
+.world:active {
+  cursor: grabbing;
+}

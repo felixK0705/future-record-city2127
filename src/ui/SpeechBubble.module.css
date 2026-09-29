@@ -1,0 +1,57 @@
+.bubble {
+  position: relative;
+  transform: translate(-50%, -100%);
+  max-width: min(260px, 62vw);
+  width: max-content;
+  padding: 8px 12px;
+  border-radius: var(--radius-m);
+  background: var(--color-bubble);
+  color: var(--color-bubble-ink);
+  font-size: 13px;
+  line-height: 1.55;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+  pointer-events: none;
+  animation: pop 0.28s var(--ease-out);
+}
+
+.bubble::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  width: 12px;
+  height: 12px;
+  background: inherit;
+  transform: translateX(-50%) rotate(45deg);
+  border-radius: 2px;
+}
+
+.ambient {
+  opacity: 0.82;
+  font-size: 12px;
+}
+
+.active {
+  font-size: 14px;
+  outline: 2px solid var(--color-accent);
+}
+
+.robot {
+  background: #e8f4ff;
+  color: #1f3550;
+}
+
+.text {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes pop {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -85%) scale(0.92);
+  }
+  to {
+    transform: translate(-50%, -100%) scale(1);
+  }
+}

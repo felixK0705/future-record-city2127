@@ -1,0 +1,68 @@
+.stick {
+  position: absolute;
+  left: calc(28px + var(--safe-left));
+  bottom: calc(28px + var(--safe-bottom));
+  width: 132px;
+  height: 132px;
+  border-radius: 50%;
+  background: rgba(16, 19, 28, 0.35);
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  pointer-events: auto;
+  touch-action: none;
+  transition: background 0.2s;
+}
+
+.stickActive {
+  background: rgba(16, 19, 28, 0.5);
+}
+
+.knob {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 56px;
+  height: 56px;
+  margin: -28px 0 0 -28px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+  pointer-events: none;
+}
+
+.action {
+  position: absolute;
+  right: calc(28px + var(--safe-right));
+  bottom: calc(40px + var(--safe-bottom));
+  min-width: 88px;
+  height: 88px;
+  padding: 0 14px;
+  border-radius: 44px;
+  background: rgba(16, 19, 28, 0.4);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  color: var(--color-ink-faint);
+  font-size: 15px;
+  font-weight: 700;
+  pointer-events: auto;
+  touch-action: none;
+  transition:
+    background 0.2s,
+    color 0.2s,
+    transform 0.15s;
+}
+
+.actionReady {
+  background: var(--color-accent);
+  border-color: #fff4d6;
+  color: var(--color-accent-ink);
+  animation: breathe 1.6s ease-in-out infinite;
+}
+
+.action:active {
+  transform: scale(0.94);
+}
+
+@keyframes breathe {
+  50% {
+    box-shadow: 0 0 0 8px rgba(255, 214, 138, 0.25);
+  }
+}

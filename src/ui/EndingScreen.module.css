@@ -1,0 +1,107 @@
+.screen {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+  padding: calc(28px + var(--safe-top)) 16px calc(20px + var(--safe-bottom));
+  z-index: 30;
+  pointer-events: none;
+  overflow-y: auto;
+}
+
+.header {
+  text-align: center;
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.45);
+  animation: rise 1.6s var(--ease-out) 0.3s both;
+}
+
+.year {
+  font-size: 13px;
+  letter-spacing: 0.5em;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.name {
+  margin-top: 4px;
+  font-family: var(--font-serif);
+  font-size: clamp(32px, 8vw, 54px);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+.tagline {
+  margin-top: 6px;
+  font-size: clamp(14px, 3.6vw, 17px);
+}
+
+.card {
+  align-self: center;
+  width: min(560px, 100%);
+  padding: 20px 22px;
+  border-radius: var(--radius-l);
+  background: var(--color-panel-strong);
+  border: 1px solid var(--color-line);
+  backdrop-filter: blur(10px);
+  pointer-events: auto;
+  animation: rise 1.4s var(--ease-out) 1.4s both;
+}
+
+.text {
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.object {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 12px;
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid var(--color-line);
+}
+
+.objectLabel,
+.costLabel {
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  color: var(--color-ink-dim);
+}
+
+.objectName {
+  font-weight: 700;
+  color: var(--color-accent);
+}
+
+.cost {
+  margin-top: 12px;
+}
+
+.costText {
+  margin-top: 2px;
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--color-ink-dim);
+}
+
+.next {
+  display: block;
+  width: 100%;
+  margin-top: 18px;
+  padding: 13px;
+  border-radius: 999px;
+  background: var(--color-accent);
+  color: var(--color-accent-ink);
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+}
